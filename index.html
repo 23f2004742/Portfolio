@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <nav class="navbar">
     <div class="logo">
       <a href="#home">
@@ -30,16 +31,37 @@
   </nav>
 
   <header id="home">
-    <h1>Soumya Ranjan Panda</h1>
-    <p>Aspiring AI/ML Engineer & Data Engineer | BS in Data Science, IIT Madras | Founder of SoApp</p>
-    <div class="header-buttons">
-      <a href="#projects" class="btn">View Projects</a>
-      <a href="resume.pdf" class="btn" target="_blank">Resume</a>
-      <a href="#contact" class="btn">Contact Me</a>
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content reveal">
+      <p class="eyebrow">AI/ML Engineer + Data Product Builder</p>
+      <h1>Soumya Ranjan Panda</h1>
+      <p class="hero-copy">Building intelligent systems across machine learning, data engineering, GenAI, retail automation, and full-stack platforms.</p>
+      <div class="header-buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="Resume.pdf" class="btn" target="_blank" rel="noopener">Resume</a>
+        <a href="#contact" class="btn ghost">Contact Me</a>
+      </div>
+      <div class="hero-metrics" aria-label="Portfolio highlights">
+        <div>
+          <span>9+</span>
+          <small>Featured builds</small>
+        </div>
+        <div>
+          <span>IITM</span>
+          <small>Data Science</small>
+        </div>
+        <div>
+          <span>SoApp</span>
+          <small>Founder & CEO</small>
+        </div>
+      </div>
     </div>
+    <a class="scroll-cue" href="#about" aria-label="Scroll to about section">
+      <span></span>
+    </a>
   </header>
 
-  <section id="about">
+  <section id="about" class="panel reveal">
     <h2>About Me</h2>
     <div class="about-content">
       <div class="about-text">
@@ -54,7 +76,7 @@
     </div>
   </section>
 
-  <section id="education">
+  <section id="education" class="panel reveal">
     <h2>Education</h2>
     <div class="education-grid">
       <div class="education-item">
@@ -67,15 +89,10 @@
         <p class="experience-date">June 2018 - March 2022</p>
         <p>XII Grade, PCM</p>
       </div>
-      <div class="education-item">
-        <h3>Advanced Certificate</h3>
-        <p class="experience-date">IIT Madras</p>
-        <p>Programming and Application Development</p>
-      </div>
     </div>
   </section>
 
-  <section id="experience">
+  <section id="experience" class="panel reveal">
     <h2>Experience</h2>
     <div class="experience-timeline">
       <div class="experience-item">
@@ -109,80 +126,200 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="panel reveal">
     <h2>Featured Projects</h2>
+    <p class="section-kicker">Selected builds across AI, data systems, automation, and full-stack products.</p>
     <div class="projects-grid">
-      <div class="card project-card">
-        <div class="project-text">
-          <h3>Heavy Industrial Machinery Price Prediction</h3>
-          <p><b>Tech Stack:</b> Python, XGBoost, LightGBM, CatBoost, Optuna</p>
-          <p>Built a regression pipeline to forecast equipment valuations using mixed numerical, categorical, and high-cardinality data. Tuned CatBoost, XGBoost, LightGBM, and Random Forest with Optuna, then blended a four-model ensemble to improve generalisation and RMSLE performance.</p>
-        </div>
-      </div>
-      <div class="card project-card">
-        <div class="project-text">
-          <h3>Smart MCQ Solver</h3>
-          <p><b>Tech Stack:</b> NLP/GenAI, Transformers, Hugging Face, RAG</p>
-          <p>Built an AI ranking system that predicts the top three correct MCQ answers and optimises for MAP@3. Combined transformer-based reasoning with retrieval-augmented generation and model ensembling to improve answer accuracy.</p>
-        </div>
-      </div>
-      <div class="card project-card">
-        <div class="project-text">
-          <h3>Lending Approval & Financial Fraud Detection</h3>
-          <p><b>Tech Stack:</b> Python, RAG, LLMs, Document Embeddings</p>
-          <p>Built a RAG system for analysing bank statements, GST filings, and annual reports to support lending approval decisions. Created document ingestion and embedding workflows for semantic search and cross-document inconsistency detection.</p>
-        </div>
-      </div>
-      <div class="card project-card">
-        <div class="project-text">
-          <h3>IFC File Error Detection System</h3>
-          <p><b>Tech Stack:</b> Python, Scikit-learn, Random Forest</p>
-          <p>Developed an ML-based error detection system for IFC files used in BIM workflows. Engineered features from IFC schema hierarchies and implemented a Random Forest classifier from scratch for error-type prediction.</p>
-        </div>
-      </div>
-      <div class="card project-card">
-        <div class="project-text">
-          <h3>College Placement Portal</h3>
-          <p><b>Tech Stack:</b> Vue.js, Node.js, Flask, SQLAlchemy, Redis, JWT</p>
-          <p>Built a role-based placement platform for students, recruiters, and admins with a Vue.js SPA, JWT authentication, RBAC, and Flask plus Node.js services. Integrated Celery and Redis for async notifications and designed REST APIs for applications, interviews, and offers.</p>
-        </div>
-      </div>
-      <div class="card project-card">
-        <div class="project-text">
-          <h3>Trekking Management App</h3>
-          <p><b>Tech Stack:</b> Flask, Jinja2, SQLAlchemy</p>
-          <p>Built a full-stack trek booking platform with relational ORM models and an admin dashboard for scheduling, capacity tracking, and operational management.</p>
-        </div>
-      </div>
-      <div class="card project-card">
+      <div class="card project-card visual-project reveal" data-href="https://so-app.tech">
         <div class="project-image">
           <a href="https://so-app.tech" target="_blank" class="card-link">
             <img src="soapp.png" alt="SoApp product image">
           </a>
         </div>
         <div class="project-text">
+          <p class="project-label">Startup Build</p>
           <h3>SoApp - Smart Retail Store Automation</h3>
           <p><b>Role:</b> Founder & CEO</p>
           <p><b>Tech Stack:</b> Python, Java, NFC/RFID, Data Analytics</p>
           <p>A dual NFC and RFID integrated self-checkout solution designed to reduce checkout queues, automate inventory workflows, and improve retail efficiency through hardware-aware software and analytics.</p>
+          <div class="project-tags">
+            <span>Retail Automation</span>
+            <span>Hardware + Software</span>
+            <span>Patent Under Review</span>
+          </div>
         </div>
       </div>
-      <div class="card project-card">
+
+      <div class="card project-card reveal" data-href="https://github.com/23f2004742/Heavy-Equipment-Selling-Price-Prediction">
+        <div class="project-text">
+          <p class="project-label">Machine Learning</p>
+          <h3>Heavy Industrial Machinery Price Prediction</h3>
+          <p><b>Tech Stack:</b> Python, XGBoost, LightGBM, CatBoost, Optuna</p>
+          <p>Built a regression pipeline to forecast equipment valuations using mixed numerical, categorical, and high-cardinality data. Tuned CatBoost, XGBoost, LightGBM, and Random Forest with Optuna, then blended a four-model ensemble to improve generalisation and RMSLE performance.</p>
+          <div class="project-tags">
+            <span>Regression</span>
+            <span>Model Ensemble</span>
+            <span>Optuna</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/23f2004742/Heavy-Equipment-Selling-Price-Prediction" target="_blank" rel="noopener">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              View Repo
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card project-card reveal" data-href="https://github.com/23f2004742/Smart-MCQ-Solver">
+        <div class="project-text">
+          <p class="project-label">GenAI</p>
+          <h3>Smart MCQ Solver</h3>
+          <p><b>Tech Stack:</b> NLP/GenAI, Transformers, Hugging Face, RAG</p>
+          <p>Built an AI ranking system that predicts the top three correct MCQ answers and optimises for MAP@3. Combined transformer-based reasoning with retrieval-augmented generation and model ensembling to improve answer accuracy.</p>
+          <div class="project-tags">
+            <span>RAG</span>
+            <span>Transformers</span>
+            <span>MAP@3</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/23f2004742/Smart-MCQ-Solver" target="_blank" rel="noopener">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              View Repo
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card project-card reveal">
+        <div class="project-text">
+          <p class="project-label">Fintech AI</p>
+          <h3>Lending Approval & Financial Fraud Detection</h3>
+          <p><b>Tech Stack:</b> Python, RAG, LLMs, Document Embeddings</p>
+          <p>Built a RAG system for analysing bank statements, GST filings, and annual reports to support lending approval decisions. Created document ingestion and embedding workflows for semantic search and cross-document inconsistency detection.</p>
+          <div class="project-tags">
+            <span>Document AI</span>
+            <span>Embeddings</span>
+            <span>Fraud Signals</span>
+          </div>
+        </div>
+      </div>
+      <div class="card project-card reveal" data-href="https://github.com/23f2004742/ifc-repair-model">
+        <div class="project-text">
+          <p class="project-label">BIM + ML</p>
+          <h3>IFC File Error Detection System</h3>
+          <p><b>Tech Stack:</b> Python, Scikit-learn, Random Forest</p>
+          <p>Developed an ML-based error detection system for IFC files used in BIM workflows. Engineered features from IFC schema hierarchies and implemented a Random Forest classifier from scratch for error-type prediction.</p>
+          <div class="project-tags">
+            <span>Classification</span>
+            <span>Feature Engineering</span>
+            <span>BIM</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/23f2004742/ifc-repair-model" target="_blank" rel="noopener">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              View Repo
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card project-card reveal" data-href="https://github.com/23f2004742/placement-portal-application">
+        <div class="project-text">
+          <p class="project-label">Full Stack</p>
+          <h3>College Placement Portal</h3>
+          <p><b>Tech Stack:</b> Vue.js, Node.js, Flask, SQLAlchemy, Redis, JWT</p>
+          <p>Built a role-based placement platform for students, recruiters, and admins with a Vue.js SPA, JWT authentication, RBAC, and Flask plus Node.js services. Integrated Celery and Redis for async notifications and designed REST APIs for applications, interviews, and offers.</p>
+          <div class="project-tags">
+            <span>RBAC</span>
+            <span>REST APIs</span>
+            <span>Async Jobs</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/23f2004742/placement-portal-application" target="_blank" rel="noopener">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              View Repo
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card project-card reveal" data-href="https://github.com/23f2004742/Trekking-Management-App">
+        <div class="project-text">
+          <p class="project-label">Web App</p>
+          <h3>Trekking Management App</h3>
+          <p><b>Tech Stack:</b> Flask, Jinja2, SQLAlchemy</p>
+          <p>Built a full-stack trek booking platform with relational ORM models and an admin dashboard for scheduling, capacity tracking, and operational management.</p>
+          <div class="project-tags">
+            <span>Flask</span>
+            <span>Admin Dashboard</span>
+            <span>SQLAlchemy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mini-projects-wrap reveal">
+        <h3 class="mini-projects-title">Mini Projects</h3>
+        <div class="mini-projects-grid">
+          <div class="card mini-project-card reveal" data-href="https://github.com/23f2004742/Parts-Tray-Semantic-Segmentation">
+            <div class="project-text">
+              <h3>Parts-Tray Semantic Segmentation</h3>
+              <p><b>Tech Stack:</b> Python, PyTorch, OpenCV</p>
+              <p>Built a semantic segmentation pipeline predicting pixel-level masks for six industrial parts classes using a custom U-Net in PyTorch. Applied Dice-aware loss, augmentation, and test-time augmentation, then encoded predictions back to RLE for submission.</p>
+              <div class="project-actions">
+                <a href="https://github.com/23f2004742/Parts-Tray-Semantic-Segmentation" target="_blank" rel="noopener">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  View Repo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mini-project-card reveal" data-href="https://github.com/23f2004742/Bank-Customer-Churn-Prediction">
+            <div class="project-text">
+              <h3>Bank Customer Churn Prediction</h3>
+              <p><b>Tech Stack:</b> Python, XGBoost, Scikit-learn</p>
+              <div class="project-actions">
+                <a href="https://github.com/23f2004742/Bank-Customer-Churn-Prediction" target="_blank" rel="noopener">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  View Repo
+                </a>
+              </div>
+              <p>Built a churn-classification pipeline benchmarking Logistic Regression, Random Forest, Gradient Boosting, and XGBoost, optimised for F1-score on imbalanced data. Engineered class-balanced training and a custom decision-threshold sweep to maximise recall–precision balance.</p>
+            </div>
+          </div>
+
+          <div class="card mini-project-card reveal" data-href="https://github.com/23f2004742/Flight-Ticket-Price-Prediction">
+            <div class="project-text">
+              <h3>Flight Ticket Price Prediction</h3>
+              <p><b>Tech Stack:</b> Python, XGBoost, Scikit-learn</p>
+              <div class="project-actions">
+                <a href="https://github.com/23f2004742/Flight-Ticket-Price-Prediction" target="_blank" rel="noopener">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  View Repo
+                </a>
+              </div>
+              <p>Built a regression pipeline forecasting ticket prices by benchmarking Linear/Ridge Regression, KNN, Decision Tree, Random Forest, Gradient Boosting, and XGBoost, optimised for R² score. Tuned top candidates with RandomizedSearchCV and cross-validation inside a modular preprocessing and training workflow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card project-card visual-project reveal" data-href="https://www.amazon.in/What-your-Teenage-Helping-different/dp/B0B2D7ZB1Y/">
         <div class="project-image">
           <a href="https://www.amazon.in/What-your-Teenage-Helping-different/dp/B0B2D7ZB1Y/" target="_blank" class="card-link">
             <img src="wtdiyt.png" alt="What to Do in Your Teenage book cover">
           </a>
         </div>
         <div class="project-text">
+          <p class="project-label">Published Work</p>
           <h3>What to Do in Your Teenage</h3>
           <p><b>Author</b> (November 2021 - July 2023)</p>
           <p>Published a guide for teenagers focused on confidence, initiative, exploration, creativity, and personal growth during formative years.</p>
+          <div class="project-tags">
+            <span>Author</span>
+            <span>Personal Growth</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="panel reveal">
     <h2>Technical Skills</h2>
     <div class="skills-container">
       <div class="skill-category">
@@ -216,7 +353,7 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="panel reveal">
     <h2>Contact</h2>
     <div class="grid">
       <div class="card">
@@ -224,7 +361,6 @@
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/soumyaranjan-panda-soapp/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/23f2004742" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://so-app.tech" target="_blank" aria-label="SoApp"><i class="fas fa-globe"></i></a>
           <a href="https://x.com/Soumya_R_P" target="_blank" aria-label="X"><i class="fab fa-twitter"></i></a>
           <a href="https://www.instagram.com/soumyaranjan.author/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
@@ -244,5 +380,167 @@
   <footer>
     <p>&copy; 2026 Soumya Ranjan Panda. All rights reserved.</p>
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script>
+    const progress = document.querySelector('.scroll-progress');
+    const navLinks = [...document.querySelectorAll('.nav-links a')];
+    const sections = [...document.querySelectorAll('header[id], section[id]')];
+
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = max > 0 ? (window.scrollY / max) * 100 : 0;
+      progress.style.width = `${percent}%`;
+    };
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll('.reveal, .card, .education-item, .experience-item, .skill-category').forEach((element) => {
+      observer.observe(element);
+    });
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+        });
+      });
+    }, {
+      rootMargin: '-45% 0px -45% 0px',
+      threshold: 0
+    });
+
+    sections.forEach((section) => navObserver.observe(section));
+
+    document.querySelectorAll('.card, .education-item, .experience-item, .skill-category').forEach((card) => {
+      const cardHref = card.dataset.href;
+      if (cardHref) {
+        card.setAttribute('role', 'link');
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('click', (event) => {
+          if (event.target.closest('a')) return;
+          window.open(cardHref, '_blank', 'noopener');
+        });
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            window.open(cardHref, '_blank', 'noopener');
+          }
+        });
+      }
+
+      card.addEventListener('pointermove', (event) => {
+        if (window.matchMedia('(pointer: coarse)').matches) return;
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 10;
+        const rotateX = (0.5 - (y / rect.height)) * 10;
+
+        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+        card.style.setProperty('--spot-x', `${x}px`);
+        card.style.setProperty('--spot-y', `${y}px`);
+      });
+
+      card.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    const canvas = document.getElementById('hero-canvas');
+    const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (window.THREE && canvas && motionAllowed) {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(58, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.position.z = 9;
+
+      const group = new THREE.Group();
+      scene.add(group);
+
+      const geometry = new THREE.IcosahedronGeometry(2.2, 2);
+      const material = new THREE.MeshStandardMaterial({
+        color: 0x32e6ff,
+        roughness: 0.32,
+        metalness: 0.68,
+        wireframe: true
+      });
+      const core = new THREE.Mesh(geometry, material);
+      group.add(core);
+
+      const ringMaterial = new THREE.MeshBasicMaterial({ color: 0xff2f6d, transparent: true, opacity: 0.56 });
+      [3.5, 4.45, 5.35].forEach((radius, index) => {
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(radius, 0.011, 12, 160), ringMaterial);
+        ring.rotation.x = Math.PI / (2.2 + index * 0.36);
+        ring.rotation.y = index * 0.75;
+        group.add(ring);
+      });
+
+      const particles = new THREE.BufferGeometry();
+      const points = [];
+      for (let i = 0; i < 420; i += 1) {
+        const radius = 5 + Math.random() * 7;
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.acos((Math.random() * 2) - 1);
+        points.push(
+          radius * Math.sin(phi) * Math.cos(theta),
+          radius * Math.sin(phi) * Math.sin(theta),
+          radius * Math.cos(phi)
+        );
+      }
+      particles.setAttribute('position', new THREE.Float32BufferAttribute(points, 3));
+      const stars = new THREE.Points(
+        particles,
+        new THREE.PointsMaterial({ color: 0xffffff, size: 0.026, transparent: true, opacity: 0.72 })
+      );
+      scene.add(stars);
+
+      scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+      const light = new THREE.PointLight(0x6ef3ff, 2.4, 30);
+      light.position.set(4, 3, 5);
+      scene.add(light);
+
+      let pointerX = 0;
+      let pointerY = 0;
+      window.addEventListener('pointermove', (event) => {
+        pointerX = (event.clientX / window.innerWidth) - 0.5;
+        pointerY = (event.clientY / window.innerHeight) - 0.5;
+      }, { passive: true });
+
+      const resizeCanvas = () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      };
+      window.addEventListener('resize', resizeCanvas);
+
+      const animate = () => {
+        requestAnimationFrame(animate);
+        const scroll = window.scrollY * 0.00045;
+        group.rotation.y += 0.004 + pointerX * 0.0015;
+        group.rotation.x += 0.002 - pointerY * 0.001;
+        stars.rotation.y -= 0.0009;
+        core.rotation.z += 0.0025;
+        group.position.y = Math.sin(Date.now() * 0.001) * 0.18 - scroll * 3;
+        renderer.render(scene, camera);
+      };
+      animate();
+    }
+  </script>
 </body>
 </html>
